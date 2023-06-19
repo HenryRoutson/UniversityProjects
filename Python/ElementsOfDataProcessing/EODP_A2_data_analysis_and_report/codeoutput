@@ -1,0 +1,221 @@
+
+
+
+
+[user@sahara ~]$ python3 project_group126.py 
+                                                   merge region files into a single dataframe...
+                                                   combining damage_objectives and damage_turrets...
+                                                   changing side.red and side.blue to red and blue...
+                                                   changing spell integers to associated names...
+                                                   splitting role TopLane_Jungle...
+                                                   using kda formula as multivariate strategy to fill in some nan values...
+                                                   scaling based on level...  (slow)
+
+Column correlations
+                  assists  damage_building  damage_turrets    deaths       kda     kills   time_cc  damage_taken  turret_kills  vision_score  damage_total  gold_earned
+assists          1.000000        -0.113857       -0.105467  0.062205  0.401124 -0.136263  0.484862     -0.010853     -0.131329      0.611984     -0.498068     0.063641
+damage_building -0.113857         1.000000        0.312672 -0.298865  0.182576  0.400014 -0.235032      0.145376      0.407521     -0.235431      0.587360     0.262773
+damage_turrets  -0.105467         0.312672        1.000000 -0.257255  0.161007  0.270560 -0.215534     -0.240880      0.704910     -0.245455      0.313990     0.323135
+deaths           0.062205        -0.298865       -0.257255  1.000000 -0.467698 -0.190790  0.262420      0.558414     -0.340088      0.259768     -0.211321     0.179315
+kda              0.401124         0.182576        0.161007 -0.467698  1.000000  0.302138  0.090955     -0.294845      0.114766      0.134836     -0.086687     0.245444
+kills           -0.136263         0.400014        0.270560 -0.190790  0.302138  1.000000 -0.155626      0.056000      0.297893     -0.228723      0.379582     0.616129
+time_cc          0.484862        -0.235032       -0.215534  0.262420  0.090955 -0.155626  1.000000      0.176090     -0.236989      0.531494     -0.418526     0.035689
+damage_taken    -0.010853         0.145376       -0.240880  0.558414 -0.294845  0.056000  0.176090      1.000000     -0.175579      0.084579      0.130617     0.206932
+turret_kills    -0.131329         0.407521        0.704910 -0.340088  0.114766  0.297893 -0.236989     -0.175579      1.000000     -0.263981      0.371873     0.197827
+vision_score     0.611984        -0.235431       -0.245455  0.259768  0.134836 -0.228723  0.531494      0.084579     -0.263981      1.000000     -0.599042     0.060223
+damage_total    -0.498068         0.587360        0.313990 -0.211321 -0.086687  0.379582 -0.418526      0.130617      0.371873     -0.599042      1.000000     0.361478
+gold_earned      0.063641         0.262773        0.323135  0.179315  0.245444  0.616129  0.035689      0.206932      0.197827      0.060223      0.361478     1.000000
+
+
+                                                   saving plots...
+                                                        - champion average stats bar graphs
+                                                        - color scatter graphs
+                                                   splitting data...
+                                                   predicting missing entries...
+                                                   using kda formula as multivariate strategy to fill in some nan values...
+                                                   predicting missing entries...
+                                                   using kda formula as multivariate strategy to fill in some nan values...
+                                                   predicting missing entries...
+                                                   using kda formula as multivariate strategy to fill in some nan values...
+
+
+
+
+d_spell decision tree
+
+|--- damage_building <= 19293.03
+|   |--- vision_score <= 67.74
+|   |   |--- gold_earned <= 18985.40
+|   |   |   |--- class: Flash
+|   |   |--- gold_earned >  18985.40
+|   |   |   |--- class: Flash
+|   |--- vision_score >  67.74
+|   |   |--- damage_total <= 150201.30
+|   |   |   |--- class: Flash
+|   |   |--- damage_total >  150201.30
+|   |   |   |--- class: Flash
+|--- damage_building >  19293.03
+|   |--- damage_taken <= 29568.11
+|   |   |--- damage_building <= 41635.00
+|   |   |   |--- class: Flash
+|   |   |--- damage_building >  41635.00
+|   |   |   |--- class: Flash
+|   |--- damage_taken >  29568.11
+|   |   |--- turret_kills <= 2.50
+|   |   |   |--- class: Smite
+|   |   |--- turret_kills >  2.50
+|   |   |   |--- class: Flash
+
+Percent of correct predictions
+0.4946783896344285
+
+Confusion Matrix:
+*Predicted*
+          Barrier  Cleanse  Exhaust     Flash  Ghost  Heal  Ignite     Smite  Teleport
+*Actual*                                                                              
+Barrier       0.0      0.0      0.0  1.000000    0.0   0.0     0.0  0.000000       0.0
+Cleanse       0.0      0.0      0.0  1.000000    0.0   0.0     0.0  0.000000       0.0
+Exhaust       0.0      0.0      0.0  0.970588    0.0   0.0     0.0  0.029412       0.0
+Flash         0.0      0.0      0.0  0.877358    0.0   0.0     0.0  0.122642       0.0
+Ghost         0.0      0.0      0.0  0.814815    0.0   0.0     0.0  0.185185       0.0
+Heal          0.0      0.0      0.0  0.960784    0.0   0.0     0.0  0.039216       0.0
+Ignite        0.0      0.0      0.0  0.978102    0.0   0.0     0.0  0.021898       0.0
+Smite         0.0      0.0      0.0  0.393013    0.0   0.0     0.0  0.606987       0.0
+Teleport      0.0      0.0      0.0  0.972222    0.0   0.0     0.0  0.027778       0.0
+
+
+
+
+f_spell decision tree
+
+|--- damage_total <= 94243.50
+|   |--- vision_score <= 29.81
+|   |   |--- deaths <= 33.84
+|   |   |   |--- class: Flash
+|   |   |--- deaths >  33.84
+|   |   |   |--- class: Cleanse
+|   |--- vision_score >  29.81
+|   |   |--- damage_total <= 40356.72
+|   |   |   |--- class: Ignite
+|   |   |--- damage_total >  40356.72
+|   |   |   |--- class: Flash
+|--- damage_total >  94243.50
+|   |--- damage_building <= 19790.72
+|   |   |--- gold_earned <= 18577.04
+|   |   |   |--- class: Flash
+|   |   |--- gold_earned >  18577.04
+|   |   |   |--- class: Flash
+|   |--- damage_building >  19790.72
+|   |   |--- damage_taken <= 34252.05
+|   |   |   |--- class: Flash
+|   |   |--- damage_taken >  34252.05
+|   |   |   |--- class: Flash
+
+Percent of correct predictions
+0.45118000925497453
+
+Confusion Matrix:
+*Predicted*
+          Barrier  Cleanse  Exhaust     Flash  Ghost  Heal    Ignite  Smite  Teleport
+*Actual*                                                                             
+Barrier       0.0      0.0      0.0  1.000000    0.0   0.0  0.000000    0.0       0.0
+Cleanse       0.0      0.0      0.0  1.000000    0.0   0.0  0.000000    0.0       0.0
+Exhaust       0.0      0.0      0.0  0.812500    0.0   0.0  0.187500    0.0       0.0
+Flash         0.0      0.0      0.0  0.926501    0.0   0.0  0.073499    0.0       0.0
+Ghost         0.0      0.0      0.0  1.000000    0.0   0.0  0.000000    0.0       0.0
+Heal          0.0      0.0      0.0  0.952703    0.0   0.0  0.047297    0.0       0.0
+Ignite        0.0      0.0      0.0  0.744409    0.0   0.0  0.255591    0.0       0.0
+Smite         0.0      0.0      0.0  0.995215    0.0   0.0  0.004785    0.0       0.0
+Teleport      0.0      0.0      0.0  1.000000    0.0   0.0  0.000000    0.0       0.0
+
+
+
+
+role decision tree
+
+|--- damage_building <= 19656.94
+|   |--- vision_score <= 62.53
+|   |   |--- damage_taken <= 38237.96
+|   |   |   |--- class: Other
+|   |   |--- damage_taken >  38237.96
+|   |   |   |--- class: TopLane
+|   |--- vision_score >  62.53
+|   |   |--- damage_total <= 157506.88
+|   |   |   |--- class: Other
+|   |   |--- damage_total >  157506.88
+|   |   |   |--- class: Other
+|--- damage_building >  19656.94
+|   |--- damage_taken <= 30163.19
+|   |   |--- gold_earned <= 18521.08
+|   |   |   |--- class: Other
+|   |   |--- gold_earned >  18521.08
+|   |   |   |--- class: Other
+|   |--- damage_taken >  30163.19
+|   |   |--- turret_kills <= 2.50
+|   |   |   |--- class: Jungle
+|   |   |--- turret_kills >  2.50
+|   |   |   |--- class: Jungle
+
+Percent of correct predictions
+0.7316057380842202
+
+Confusion Matrix:
+*Predicted*
+            Jungle     Other   TopLane
+*Actual*                              
+Jungle    0.652174  0.194508  0.153318
+Other     0.032700  0.877567  0.089734
+TopLane   0.051345  0.601467  0.347188
+
+
+
+
+champion decision tree
+
+|--- damage_total <= 62857.62
+|   |--- time_cc <= 39.75
+|   |   |--- kills <= 12.74
+|   |   |   |--- class: Sona
+|   |   |--- kills >  12.74
+|   |   |   |--- class: Pyke
+|   |--- time_cc >  39.75
+|   |   |--- time_cc <= 83.18
+|   |   |   |--- class: Rakan
+|   |   |--- time_cc >  83.18
+|   |   |   |--- class: Leona
+|--- damage_total >  62857.62
+|   |--- time_cc <= 9.99
+|   |   |--- time_cc <= 3.41
+|   |   |   |--- class: Akali
+|   |   |--- time_cc >  3.41
+|   |   |   |--- class: Talon
+|   |--- time_cc >  9.99
+|   |   |--- damage_taken <= 39131.00
+|   |   |   |--- class: Jhin
+|   |   |--- damage_taken >  39131.00
+|   |   |   |--- class: LeeSin
+
+Percent of correct predictions
+0.09717723276260991
+
+Confusion Matrix:
+*Predicted*
+          Aatrox  Ahri     Akali  Akshan  Alistar  Amumu  Anivia  Aphelios  Ashe  AurelionSol  Azir  Bard  Blitzcrank  Brand  ...  Warwick  Xayah  Xerath  XinZhao  Yasuo  Yone  Yorick  Yuumi  Zac  Zed  Ziggs  Zilean  Zoe  Zyra
+*Actual*                                                                                                                      ...                                                                                                 
+Aatrox       0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Ahri         0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Akali        0.0   0.0  0.700000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Akshan       0.0   0.0  0.655172     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Alistar      0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+...          ...   ...       ...     ...      ...    ...     ...       ...   ...          ...   ...   ...         ...    ...  ...      ...    ...     ...      ...    ...   ...     ...    ...  ...  ...    ...     ...  ...   ...
+Zed          0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Ziggs        0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Zilean       0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Zoe          0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+Zyra         0.0   0.0  0.000000     0.0      0.0    0.0     0.0       0.0   0.0          0.0   0.0   0.0         0.0    0.0  ...      0.0    0.0     0.0      0.0    0.0   0.0     0.0    0.0  0.0  0.0    0.0     0.0  0.0   0.0
+
+[152 rows x 152 columns]
+
+
+done
+[user@sahara ~]$ 

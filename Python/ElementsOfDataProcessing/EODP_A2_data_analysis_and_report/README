@@ -1,0 +1,51 @@
+
+
+# Canvas Group name:
+project_group126
+
+# Group leader: student number, username, name
+1307261, Henry Routson
+
+# Members: student number, username, name
+1269811, Alexander Ryan
+1160553, Yonatan Symonds
+1249884, Yan Yang
+
+
+# Introduction of intended use for code
+
+    project_group126.py
+
+    This file contains all code used for this project, to avoid any complexity involved in importing utility files
+    It has a number of functions, including
+
+        - data cleaning, integration and reduction. 
+            - imputing
+        - automatically generating all graphs combinations of the columns in our unified games data frame, which informed our analysis
+        - training and evaluating a decision tree
+
+    Some parts of the code are in functions if they are going to be used more than once, the imputer for example.
+    The code is written to be highly generalisable and robust through the use of for loops to avoid hardcoding.
+
+
+# File structure and use of each file
+    NA
+
+# Instructions on how to run your code.
+
+    copy and paste
+    python3 project_group126.py 
+    into the terminal
+
+    The code will ...
+        - save a number of graphs, note it cannot overwrite ones of the same name
+        - print off the decision tree structure and it's evaluation
+
+# Any additional requirements needed to run code.
+
+
+
+
+
+
+
