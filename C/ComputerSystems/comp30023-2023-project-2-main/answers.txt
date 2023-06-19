@@ -1,0 +1,185 @@
+
+
+
+Henry Routson
+HROUTSON
+1307261
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+1. Should the server accept calls from everyone, or just a subset of users?
+
+To avoid the server being overloaded or misused by malicious actors, the system should only accept calls from a subset of authenticated users.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+2. Should authentication etc. be provided by the RPC framework, or by the functions that use the RPC frame- work?
+
+In a real world implimenation...
+It's easier and simpler to handle the authentication for a number of functions, than to update it for each individual function. 
+Authentication information should be in a shared state between functions, for example stored the client struct.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+3. What transport layer protocol should be used? What are the trade-offs?
+
+"Decide what transport layer protocol to use. (You will almost certainly choose TCP, but briefly mention the pros and cons of alternatives.)"
+
+	The important considerations to this assignment
+
+	TCP
+		+ Addresses corrupted, lost and out of order packets
+		- higher latency
+		+ better for supporting encrption being connection based
+
+	UDP
+		- Doesn't address corrupted, lost or out of order packets
+		+ lower latency
+		
+
+	As such I will use TCP, as avoiding lost or corrupted packets is extremely important in this context.
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+4. In which function(s) should the socket(s) be created?
+
+The socket should be created in initialisation functions of both the server and client.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+5. Should rpc_client and rpc_server be allocated dynamically or statically? What are the implications for the client and server code?
+
+Allocating the server and client dynamically allows it to be shared between threads.
+It would also allow a dynamic number of connections at run time.
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+6. What happens if one host uses big-endian byte order and the other uses little-endian? How does that relate to “network byte order”?
+
+In a correct implementation …
+Bytes should always be sent across a network in a consistent format, the standard is big endian.
+Bytes will always sent in big endian (so swapped before transmission on little endian machines)
+Bytes will always received in big endian (and so swapped before use on little endian machines)
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Note that size_t depends on the architecture, and the sender and receiver can have different architectures. Think how this will affect your protocol.
+Note that size_t is system-dependent. You will need to choose a system-independent way to encode the size of the data block in the packet
+
+
+size_t will be saved into a 64 bit number, and then those 8 bytes will be sent over the network, to be reinterpreted as a 64 bit number, and then as size_t 
+This will mean that all architectures will send the same number of bytes.
+
+<stdint.h> could also be used
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+The protocol should specify error responses for routine failures, such as a request for a procedure that does not exist.
+
+
+If there is no procedure, null is returned from RPC find.
+If Null is returned from the function procedure execution on the server, RPC call returns Null also.
+If creation of the client or the server fails, Null is returned.
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+The protocol should work correctly even if there are IP layer packet loss and duplication.
+
+TPC will handle these problems, and there will be error checks on the read and write functions used to trigger tcp
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+The protocol should handle the fact that IP packets have a maximum allowed size.
+
+With IPv6, packet sizes can be up to 4,294,967,295 bytes or around 4gb.
+https://www.microsoftpressstore.com/articles/article.aspx?p=2225063&seqNum=4
+
+At this size it is not very applicable to be using remote procedures given the network overhead, and so this is not a serious issue for the protocol.
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+protocol outline
+
+
+1 Message boundaries
+
+Given that TCP does not have message boundaries
+It is important the the protocol considers a way to avoid prefix confusion
+in situations there are multiple ways to interpret a string of bytes
+if one command is a prefix of another
+
+The simplest solution involves, as c impliments in its strings, a special terminating character.
+But this could have problems if we for whatever reason need to use that character.
+
+A better solution inspired by newer languages like rust, is to use a length provided string / byte array,
+where the length provided will provide the range for seperate messages.
+
+// strings without terminating characters
+typedef struct {
+    usize len; 
+    char *chars;
+} String_t;
+
+// implimentation in a byte stream without  message boundaries
+5 "start" 2 "do" 3 "end"
+
+
+2 Commands
+
+The most important thing for a server to do is to follow commands, and so these will be defined in a global enum for both the client and server to use.
+
+enum { CLOSE , FIND, CALL };
+
+Using an enum (underneath simply an integer) will ensure performance, compared to other methods like string comparison
+
+
+3 Safety 
+
+Wrapper functions around read() and write() will 
+	- check for negative return results indicating errors
+	- swap byte order for transmission
+
+Wrapper functions around these above functions will
+	- take in an expected and given message length
+	- cross check this length to verify transmission, and -1 to check byte ordering
+	- malloc the exact size buffer on the receiving end and read in to this memory
+
+Wrapper functions around these above functions will
+	- transmit and receive RPC data packets, not allowing the invalid memory address to be used on the receiving machine.
+
+
+4 Functions
+
+RPC serve will run in a finite loop on a thread, reading in commands and then running them, closing after the client closes.
+RPC serve all will run in a infinite loop, reading in connections and serving them
+
+RPC find
+	will return a function handle containing the index of the function in the servers memory,
+	which will be used to access this function in the future
+
+RPC call
+	will use the index in the rpc handle to find the procedure, calculate and use the previously created functions to transmit, and reply 
+	
+

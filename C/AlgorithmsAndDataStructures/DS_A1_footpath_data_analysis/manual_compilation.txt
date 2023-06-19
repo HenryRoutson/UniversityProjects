@@ -1,0 +1,11 @@
+
+
+gcc -Wall -g -c driver.c
+gcc -Wall -g -c csv.c
+gcc -Wall -g -c linked_list.c
+gcc -Wall -g -c stage1.c
+gcc -Wall -g -c stage2.c
+gcc -Wall -g -c footpath.c
+
+gcc -Wall -g -o dict1 driver.o csv.o linked_list.o stage1.o stage2.o footpath.o
+cp dict1 dict2

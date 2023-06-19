@@ -1,0 +1,13 @@
+{
+	"files.associations": {
+		"__locale": "c",
+		"__node_handle": "c",
+		"ctime": "c",
+		"types.h": "c",
+		"global.h": "c",
+		"stdbool.h": "c",
+		"memory.h": "c",
+		"math.h": "c",
+		"unistd.h": "c"
+	}
+}

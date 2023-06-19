@@ -1,0 +1,22 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug",
+			"program": "${workspaceFolder}/allocate",
+			"args": ["-f" ,"cases/generated-tests/data1.txt" ,"-s", "SJF", "-m" ,"best-fit" ,"-q" ,"2"],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}
+
+// "args": ["-f","cases/task1/simple.txt","-s","SJF","-m","infinite","-q","1"],
+// "args": ["-f","cases/task1/more-processes.txt","-s","SJF","-m","infinite","-q","3"],
+// "args": ["-f" ,"cases/task3/non-fit.txt", "-s", "RR", "-m","best-fit","-q","3"],
+// "args": ["-f" ,"cases/task2/two-processes.txt" ,"-s", "RR", "-m" ,"infinite" ,"-q" ,"1"],
+// "args": ["-f" ,"cases/generated-tests/data1.txt" ,"-s", "SJF", "-m" ,"best-fit" ,"-q" ,"2"],

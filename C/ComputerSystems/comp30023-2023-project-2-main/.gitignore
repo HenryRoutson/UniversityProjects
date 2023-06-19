@@ -1,0 +1,16 @@
+*.o
+rpc-client 
+rpc-server
+
+client
+server
+
+*.DS_store
+
+server.a 
+client.a
+
+cases/.DS_store
+cases6000/.DS_store
+
+output/*

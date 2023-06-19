@@ -1,0 +1,347 @@
+[33mcommit b1ea6214e833c534449a535e0d510617f8f13da5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 17 00:42:38 2023 +1000
+
+    pipeline push
+
+[33mcommit 037430a02d5f6149fdf974670a16dc4321c284b0[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 21:22:03 2023 +1000
+
+    PATCH
+
+[33mcommit 1ce01512a24b82957d8698eee05d15716c91118d[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 19:52:34 2023 +1000
+
+    bug fixes
+
+[33mcommit 410cdf6f3d1b1402c6d49ce3a1e9d0c8e2fd3875[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 18:38:58 2023 +1000
+
+    bug fix, used wrong function
+
+[33mcommit 9cf605559c6805426c4e66d2480e8ffa8d4ae5d4[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 17:23:54 2023 +1000
+
+    add asserts for list length
+
+[33mcommit 558f0df11f2a60baeff40e9722a6bf3fd16bd26b[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 16:25:52 2023 +1000
+
+    simplify sha read code
+
+[33mcommit ef44639530ca3b1c12b4bee61cc20e93804c0c4d[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 15:27:25 2023 +1000
+
+    added changes for task 4
+
+[33mcommit 2366c95e51b4215272bec9fa13e651fb300f650c[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 14:51:40 2023 +1000
+
+    PATCH -v
+
+[33mcommit bbad7a0d711bf977ba398312a968642f693f2106[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 14:48:36 2023 +1000
+
+    get real process SJF working
+
+[33mcommit 771f7b80a761f38538a77a1192a9242c8d0e36a8[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 16 01:22:04 2023 +1000
+
+    scheduler bug fix
+
+[33mcommit 96b517b574e63b76e329b8bcfd02847c2850a8b7[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 16:04:23 2023 +1000
+
+    PATCH
+
+[33mcommit e8df0e0af4577f10231d7d157154b8bd9bc48316[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 15:56:54 2023 +1000
+
+    PATCH prev commit
+
+[33mcommit 192e5e681e15e0058e23a2232a9e75556313379d[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 15:23:23 2023 +1000
+
+    simplified scheduler real process integration
+
+[33mcommit e1885f4f9445dfef1c9391d2d4343232f7beedd0[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 15:21:04 2023 +1000
+
+    added sleep to scheduler for option to run at realtime speed
+
+[33mcommit 6ba4071a82b9a564873a98f904d339c9912b39b3[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 14:22:01 2023 +1000
+
+    PATCH prev commit
+
+[33mcommit 92a68203631e9509410dd558988f0c92334b3060[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 14:13:49 2023 +1000
+
+    rename types, work on task 4
+
+[33mcommit 34df8b137ffac96b1fcc5112edac4f67db3fbe5c[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 15 00:15:49 2023 +1000
+
+    working pipes with task 4
+
+[33mcommit 3ac493ef246b8d23fb6573b4c1ed496a1054ca0c[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Fri Apr 14 12:45:03 2023 +1000
+
+    bug fix, removed } char
+
+[33mcommit 8fecdbd7ed029f916da68250781e4460248d6edf[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Fri Apr 14 11:53:58 2023 +1000
+
+    working on task 4, seperate task code with ifdef
+
+[33mcommit 4824cc64fea412b14724e8d2740f524327e7b23b[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Fri Apr 14 11:12:01 2023 +1000
+
+    simplify is_system_big_endian()
+
+[33mcommit e96a0cfd2cdd908f5471098b5ccf783872edba44[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Fri Apr 14 00:29:59 2023 +1000
+
+    updated SJF sort comparison function to spec
+
+[33mcommit 58da58423a28c129e4cd764995be37e22f7b74f0[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Thu Apr 13 20:46:49 2023 +1000
+
+    refined functions for stage 4
+
+[33mcommit 2baec444a039ee5277e2a859c052ee85554d5243[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Thu Apr 13 20:39:12 2023 +1000
+
+    add functions for stage 4
+
+[33mcommit 0860ef3b4a714f838e34ba6c43d50b28d26d367f[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Wed Apr 12 13:15:51 2023 +1000
+
+    added testing in make file
+
+[33mcommit 0757ec5f8d6281295c388c29298816229218d5dd[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Wed Apr 12 11:57:07 2023 +1000
+
+    added mor assertions
+
+[33mcommit 703a70d2cbde28d8790e021522e5102718c3ab09[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Wed Apr 12 00:51:38 2023 +1000
+
+    impliment memory strategy variable
+
+[33mcommit f5c5af15d3fd1cee8023db4581257cf13a9dd011[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Wed Apr 12 00:25:36 2023 +1000
+
+    PATCH remove debug messages
+
+[33mcommit 5e503e9516b57fdb1620f7696b158c07a13e98d5[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Tue Apr 11 23:57:57 2023 +1000
+
+    a number of bug fixes, printing READY
+
+[33mcommit 5e49f43fcc362e8274bf0d37bc66be291204a8a7[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Tue Apr 11 22:16:02 2023 +1000
+
+    LARGE bug fixes and memory allocation
+
+[33mcommit 3692a314cef35ffb698b97e5854cecfebb109439[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Tue Apr 11 18:12:35 2023 +1000
+
+    finalised list changes
+
+[33mcommit 8530ae4e31d8fe42d416d8df8207cd42ccd947d2[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Tue Apr 11 13:12:53 2023 +1000
+
+    added functions to list lib
+
+[33mcommit 05c69b8cc2807b1c7c83e0cb8d31f9823a3cf772[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Tue Apr 11 10:27:24 2023 +1000
+
+    process.c file changes
+
+[33mcommit 413b22732755de4460ef936a03fb247cc0b0b925[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 16:06:38 2023 +1000
+
+    added list functions
+
+[33mcommit 1257cb329753bc8dc1291d6d505ae33812dac059[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 14:05:47 2023 +1000
+
+    setup for memory management
+
+[33mcommit 7c2efeb8f5ecf04726efc3f7fdfce1ae0998f708[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 14:02:39 2023 +1000
+
+    made list_t more generic, add process_list_t
+
+[33mcommit bd33c01ba72f7f6c29f111e7822e0dea73ce009f[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 13:26:43 2023 +1000
+
+    make nodes more generic
+
+[33mcommit ed9b0f4a025e34d62b8c27ac1d98660a065ee96d[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 12:52:25 2023 +1000
+
+    updated help functions to support complex frees
+
+[33mcommit 040d3bb8e43a335f22d9354dab2cbda2e8151200[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 12:23:36 2023 +1000
+
+    remove assumptions about struct order
+
+[33mcommit aca496574265136af4ab679f9f19e79e0c74acc5[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 12:14:29 2023 +1000
+
+    made node_t more generic
+
+[33mcommit 9877ca8c027b5ed1196a2c354bf69a6c213f0a35[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Mon Apr 10 12:09:46 2023 +1000
+
+    bug fix from last commit, didn't change ifdef name
+
+[33mcommit 91cb1580cbd2573cd5bd161c7787d596a8c41449[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 9 23:19:12 2023 +1000
+
+    bug fix with ifdef
+
+[33mcommit b7b2d7579efa2582538b280efaf1114549c3898b[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 9 23:03:43 2023 +1000
+
+    add memory block type
+
+[33mcommit caaa48f9cd7a2f20d70dc9b7bffc7aec8cb5faa8[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 9 22:52:33 2023 +1000
+
+    started working on memory allocation, added seperate files
+
+[33mcommit f4fb6e14572fa103798c1b00c09184fdbe3391cf[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 9 15:58:13 2023 +1000
+
+    fix Turnaround time, renamed arrival to time_arrived, makefile bug fix
+
+[33mcommit b6433f73a40358c690461fc83affdc26373a9fa1[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 9 15:40:14 2023 +1000
+
+    update process name to support alphanumeric
+
+[33mcommit dac7fa3ef12b89f2ac12949e2e4043d9e7f9ffdf[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 9 15:06:14 2023 +1000
+
+    Added Round Robin
+
+[33mcommit f68abf978fa1ccf32183c6f7b35977dd8377b847[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 8 22:27:21 2023 +1000
+
+    work on 5.2
+
+[33mcommit b2302db2158b62c45fad56d45a148f4433111c90[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 8 21:40:11 2023 +1000
+
+    starting 5.2 + small changes - make, int to uint, removed unused enums
+
+[33mcommit 540f22e88eb90c554cea05c18e2c120d89894c63[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 8 19:48:39 2023 +1000
+
+    bug fix
+
+[33mcommit 16742d6204f0691f93782aae89989ee6d35cb79a[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 8 19:45:12 2023 +1000
+
+    created global DEBUG_PRINTS variable
+
+[33mcommit 142ee587432a8ee167b676d5f233dd8957c67fd9[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 8 19:34:08 2023 +1000
+
+    bug fix for proc_remaining
+
+[33mcommit 87209c7ace51e6337b1709a39ca424efdbeaf257[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sat Apr 8 14:41:45 2023 +1000
+
+    Setup SJF
+
+[33mcommit acb94bea424701bc446bb09910aaca8e085da39d[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Wed Apr 5 16:35:41 2023 +1000
+
+    seperate processing CLI and FILES from main
+
+[33mcommit 13ffe3eaa0157834861bfed1ae28bab425953b69[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 2 14:21:39 2023 +1000
+
+    Added GitIgnore
+
+[33mcommit 57d4366fac7bc0d89ffd7d2f2a09678edf68b224[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Apr 2 14:11:33 2023 +1000
+
+    list bug fixes, more asserts, clean valgrind
+
+[33mcommit 7ff782a8a5a6e20923640fe6dca9ac1d73dfa671[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Thu Mar 30 16:55:49 2023 +1100
+
+    Clean and add VS debugging files
+
+[33mcommit 72d04cb304ef3ebd0e3d1fbdc599d573bc6c8ea3[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Thu Mar 30 16:48:23 2023 +1100
+
+    Initial draft: Added helper functions, linked list type, arguement processing
+
+[33mcommit efae74cbd95aaecaa9b87a68eabad08c65cc100c[m
+Author: Henry Routson <hroutson@student.unimelb.edu.au>
+Date:   Sun Mar 12 22:09:57 2023 +1100
+
+    init: add .gitlab-ci.yml
